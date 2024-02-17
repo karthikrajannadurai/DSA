@@ -5,6 +5,7 @@ public class NumberSeparation {
         digitSeparation();
         findNoOfDigits();
         multipleMethod();
+        divideAndConquerer();
     }
 
     //    1. Digit Separation
@@ -38,5 +39,46 @@ public class NumberSeparation {
         }
         System.out.println(length);
         System.out.println("------------------------------------------------");
+    }
+
+    public static void divideAndConquerer() {
+        System.out.println("Divide And Conquerer");
+        int n = 9, length = 0;
+        if (n < 100000) {
+            if (n < 10000) {
+                if (n < 1000) {
+                    if (n < 100) {
+                        if (n < 10) {
+                            length = 1;
+                        } else {
+                            length = 2;
+                        }
+                    } else {
+                        length = 3;
+                    }
+                } else {
+                    length = 4;
+                }
+            } else {
+                length = 5;
+            }
+        }
+        System.out.println(length);
+        System.out.println("------------------------------------------------");
+//        10, 100, 1,000 , 10,000 , 1,00,000 , 10,00,000
+        if (n < 1000000 && n > 100000) { // 1000000 , 999999
+            length = 6;
+        } else if (n < 100000 && n > 10000) {
+            length = 5;
+        } else if (n < 10000 && n > 1000) {
+            length = 4;
+        } else if (n < 1000 && n > 100) {
+            length = 3;
+        } else if (n < 100 && n > 10) {
+            length = 2;
+        } else {
+            length = 1;
+        }
+        System.out.println(length);
     }
 }
