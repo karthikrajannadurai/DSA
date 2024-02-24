@@ -2,7 +2,8 @@ package org.dsa.mathematics;
 
 public class SquareRoot {
     public static void main(String[] args) {
-        System.out.printf("%.2f", squareRoot(40, 2));
+        System.out.printf("Normal method-- %.2f\n", squareRoot(40, 2));
+        System.out.println("NewtonRamphson Method-- " + newtonRampsonMethod(40));
     }
 
     public static double squareRoot(int n, int p) {
@@ -27,6 +28,19 @@ public class SquareRoot {
             }
             root -= incr;
             incr /= 10;
+        }
+        return root;
+    }
+
+    static double newtonRampsonMethod(int a) {
+        double root, x = a;
+        while (true) {
+            root = 0.5 * (x + (a / x));
+
+            if (Math.abs(root - x) < 0.01) {
+                break;
+            }
+            x = root;
         }
         return root;
     }
