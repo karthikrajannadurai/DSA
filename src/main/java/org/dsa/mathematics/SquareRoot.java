@@ -32,10 +32,10 @@ public class SquareRoot {
         return root;
     }
 
-    static double newtonRampsonMethod(int a) {
-        double root, x = a;
+    static double newtonRampsonMethod(int N) {
+        double root, x = N;
         while (true) {
-            root = 0.5 * (x + (a / x));
+            root = 0.5 * (x + (N / x));
 
             if (Math.abs(root - x) < 0.01) {
                 break;
