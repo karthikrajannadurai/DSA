@@ -4,7 +4,7 @@ public class FactorsOfNumber {
     public static void main(String[] args) {
         factors(347);
         System.out.println();
-        factorsUsingSquareRoot(347);
+        factorsUsingSquareRoot(200);
     }
 
     static void factors(int a) {
@@ -19,7 +19,7 @@ public class FactorsOfNumber {
     static void factorsUsingSquareRoot(int a) {
         for (int i = 1; i <= Math.sqrt(a); i++) {
             if (a % i == 0) {
-                System.out.printf(i + " " + a / i);
+                System.out.printf(i + " " + a / i+" ");
 
             }
         }
