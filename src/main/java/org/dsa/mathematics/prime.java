@@ -5,7 +5,7 @@ public class prime {
 //        System.out.println(ONApproach(7));
 //        System.out.println(OLogNApproach(13));
         sieveOfMethod(100);
-        sixK1(97);
+        sixK1(200);
     }
 
     public static boolean ONApproach(int n) {
@@ -49,12 +49,20 @@ public class prime {
 
     public static void sixK1(int n) {
 
+        if (n == 1) {
+            System.out.println("Not Prime");
+            return;
+        }
+        if (n == 2 || n == 3 || n == 5) {
+            System.out.println("Prime");
+            return;
+        }
         if (n % 2 == 0 || n % 3 == 0) {
             System.out.println("Not Prime");
             return;
         }
         for (int i = 5; i * i <= n; i = i + 6) {
-            if (n % i == 0 || n % (i + 1) == 0) {
+            if (n % i == 0 || n % (i + 2) == 0) {
                 System.out.println("Not prime");
                 return;
             }
