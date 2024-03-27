@@ -66,15 +66,15 @@ public class NumberSeparation {
         System.out.println(length);
         System.out.println("------------------------------------------------");
 //        10, 100, 1,000 , 10,000 , 1,00,000 , 10,00,000
-        if (n < 1000000 && n > 100000) { // 1000000 , 999999
+        if (n < 1000000 && n >= 100000) { // 1000000 , 999999
             length = 6;
-        } else if (n < 100000 && n > 10000) {
+        } else if (n < 100000 && n >= 10000) {
             length = 5;
-        } else if (n < 10000 && n > 1000) {
+        } else if (n < 10000 && n >= 1000) {
             length = 4;
-        } else if (n < 1000 && n > 100) {
+        } else if (n < 1000 && n >= 100) {
             length = 3;
-        } else if (n < 100 && n > 10) {
+        } else if (n < 100 && n >= 10) {
             length = 2;
         } else {
             length = 1;
