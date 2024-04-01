@@ -20,10 +20,10 @@ public class SuperPrime {
         for (int i = 2; i < arr.length; i++) {
 
             if (!arr[i]) {
-//                count++;
-//                if (!arr[count]) {
+                count++;
+                if (!arr[count]) {
                     System.out.print(i + " ");
-//                }
+                }
             }
         }
     }
