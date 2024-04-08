@@ -2,6 +2,8 @@ package org.dsa.mathematics;
 
 public class FindTwoUniqueNumber {
     public static void main(String[] args) {
+
+        // Same code for finding the two missing numbers
         int[] arr = {3, 4, 3, 4, 9, 4, 4, 32, 7, 7};
         int xorWhole = 0, rightMostSetBit, a = 0, b = 0;
         for (int i = 0; i < arr.length; i++) {
