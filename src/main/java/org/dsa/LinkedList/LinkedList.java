@@ -128,7 +128,7 @@ public class LinkedList<T> {
             temp = temp.getNext();
             counter++;
         }
-        while (temp.hasNext()) {
+        while (temp != null && temp.hasNext()) {
             temp = temp.getNext();
             mainptr = mainptr.getNext();
         }
@@ -139,7 +139,7 @@ public class LinkedList<T> {
     }
 
     public void findNearingDuplicates(Comparator<T> comparator) {
-
+        // List should be sorted.
         LinkedListObject<T> current = head;
         while (current != null && current.hasNext()) {
             if (comparator.compare(current.getData(), current.getNext().getData()) == 0) {
@@ -147,6 +147,31 @@ public class LinkedList<T> {
             } else {
                 current = current.getNext();
             }
+        }
+    }
+
+    public void InsertInSortedList(T data, Comparator<T> comparator) {
+
+        LinkedListObject<T> current = head;
+        if (current == null) {
+            head = new LinkedListObject<>(data);
+            tail = head;
+            return;
+        }
+        LinkedListObject<T> temp = null;
+        while (current != null && comparator.compare(current.getData(), data) < 0) {
+            temp = current;
+            current = current.getNext();
+        }
+
+        if (temp == null) {
+            LinkedListObject<T> newNode = new LinkedListObject<>(data);
+            newNode.setNext(current);
+            head = newNode;
+        }else {
+            LinkedListObject<T> newNode = new LinkedListObject<>(data);
+            newNode.setNext(current);
+            temp.setNext(newNode);
         }
     }
 

@@ -45,6 +45,22 @@ public class Main {
         System.out.println();
         list1.findNearingDuplicates(new compare());
         list1.printAll();
+
+        // insert into sorted linkedList
+        System.out.println();
+        System.out.println("Insert into Sorted linkedList");
+        LinkedList<Integer> list2 = new LinkedList<>();
+        list1.printAll();
+        System.out.println();
+        list2.InsertInSortedList(1, new compare());
+        list2.insert(3);
+        list2.insert(4);
+        list2.insert(5);
+        list2.insert(6);
+        list2.InsertInSortedList(2, new compare());
+        list2.InsertInSortedList(7, new compare());
+        list2.InsertInSortedList(0, new compare());
+        list2.printAll();
     }
 }
 
@@ -52,9 +68,6 @@ class compare implements Comparator<Integer> {
 
     @Override
     public int compare(Integer o1, Integer o2) {
-        if (o1.equals(o2)) {
-            return 0;
-        }
-        return 1;
+        return o1.compareTo(o2);
     }
 }
