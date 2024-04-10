@@ -61,11 +61,18 @@ public class Main {
         list2.InsertInSortedList(7, new compare());
         list2.InsertInSortedList(0, new compare());
         list2.printAll();
+
+//        delete with key
+        System.out.println();
+        System.out.println("Delete With key");
+        list2.printAll();
+        System.out.println();
+        list2.deleteValue(7, new compare());
+        list2.printAll();
     }
 }
 
 class compare implements Comparator<Integer> {
-
     @Override
     public int compare(Integer o1, Integer o2) {
         return o1.compareTo(o2);

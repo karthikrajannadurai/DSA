@@ -168,10 +168,29 @@ public class LinkedList<T> {
             LinkedListObject<T> newNode = new LinkedListObject<>(data);
             newNode.setNext(current);
             head = newNode;
-        }else {
+        } else {
             LinkedListObject<T> newNode = new LinkedListObject<>(data);
             newNode.setNext(current);
             temp.setNext(newNode);
+        }
+    }
+
+    public void deleteValue(T data, Comparator<T> comparator) {
+
+        if (head == null) {
+            return;
+        }
+        LinkedListObject<T> temp = null, current = head;
+        if (comparator.compare(data, current.getData()) == 0) {
+            head = head.getNext();
+            return;
+        }
+        while (current != null && comparator.compare(data, current.getData()) != 0) {
+            temp = current;
+            current = current.getNext();
+        }
+        if (temp != null && current != null) {
+            temp.setNext(current.getNext());
         }
     }
 
