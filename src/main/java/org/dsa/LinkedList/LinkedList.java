@@ -138,6 +138,18 @@ public class LinkedList<T> {
         return mainptr.getData();
     }
 
+    public void findNearingDuplicates(Comparator<T> comparator) {
+
+        LinkedListObject<T> current = head;
+        while (current != null && current.hasNext()) {
+            if (comparator.compare(current.getData(), current.getNext().getData()) == 0) {
+                current.setNext(current.getNext().getNext());
+            } else {
+                current = current.getNext();
+            }
+        }
+    }
+
     public int size() {
         return size;
     }

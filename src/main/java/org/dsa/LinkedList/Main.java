@@ -36,6 +36,15 @@ public class Main {
         // getValue At index
         System.out.println();
         System.out.println(list1.getFromLast(3));
+
+        // find Duplicates
+        System.out.println("Duplicates");
+        list1.insert(212);
+        list1.insert(212);
+        list1.printAll();
+        System.out.println();
+        list1.findNearingDuplicates(new compare());
+        list1.printAll();
     }
 }
 
