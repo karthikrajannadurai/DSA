@@ -105,6 +105,39 @@ public class LinkedList<T> {
         head = previous;
     }
 
+    public T getFromLast(int index) {
+
+////        1. based on data
+//        int iterValue = size - index, counter = 0;
+//        if (iterValue < 0) {
+//            return null;
+//        }
+//        LinkedListObject<T> temp = head;
+//        while (iterValue > 0 && counter < iterValue) {
+//            temp = temp.getNext();
+//            counter++;
+//        }
+//        return temp.getData();
+
+        // 2. pointer based
+
+        LinkedListObject<T> mainptr = head;
+        LinkedListObject<T> temp = head;
+        int counter = 0;
+        while (counter < index - 1) {
+            temp = temp.getNext();
+            counter++;
+        }
+        while (temp.hasNext()) {
+            temp = temp.getNext();
+            mainptr = mainptr.getNext();
+        }
+        if (mainptr == null) {
+            return null;
+        }
+        return mainptr.getData();
+    }
+
     public int size() {
         return size;
     }

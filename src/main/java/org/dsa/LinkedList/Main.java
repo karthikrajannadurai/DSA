@@ -32,6 +32,10 @@ public class Main {
         System.out.println();
         list1.reverse();
         list1.printAll();
+
+        // getValue At index
+        System.out.println();
+        System.out.println(list1.getFromLast(3));
     }
 }
 
