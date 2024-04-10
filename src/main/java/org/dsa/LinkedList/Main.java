@@ -25,6 +25,13 @@ public class Main {
 //        search
         System.out.println();
         System.out.println(list1.contains(23, new compare()));
+
+//        reverse
+        System.out.println("reversed::---- ");
+        list1.printAll();
+        System.out.println();
+        list1.reverse();
+        list1.printAll();
     }
 }
 

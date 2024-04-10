@@ -92,6 +92,19 @@ public class LinkedList<T> {
         }
     }
 
+    public void reverse() {
+
+        LinkedListObject<T> current = head, previous = null, next;
+        while (current != null) {
+            next = current.getNext();
+            current.setNext(previous);
+            previous = current;
+            current = next;
+        }
+        tail = head;
+        head = previous;
+    }
+
     public int size() {
         return size;
     }
