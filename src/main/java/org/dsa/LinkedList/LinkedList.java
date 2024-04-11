@@ -21,6 +21,13 @@ public class LinkedList<T> {
     }
 
     public void insert(T data) {
+        if (tail == null) {
+            LinkedListObject<T> head = new LinkedListObject<>(data);
+            this.head = head;
+            this.tail = head;
+            size++;
+            return;
+        }
         tail.setNext(new LinkedListObject<>(data));
         tail = tail.getNext();
         size++;
@@ -192,6 +199,87 @@ public class LinkedList<T> {
         if (temp != null && current != null) {
             temp.setNext(current.getNext());
         }
+    }
+
+    public boolean detectLoop() {
+
+        LinkedListObject<T> fastPtr = head;
+        LinkedListObject<T> slowPtr = head;
+        while (fastPtr.hasNext() && fastPtr.getNext().hasNext()) {
+            fastPtr = fastPtr.getNext().getNext();
+            slowPtr = slowPtr.getNext();
+            if (fastPtr == slowPtr) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public T findStartingPointInLoop() {
+
+        LinkedListObject<T> fastPtr = head;
+        LinkedListObject<T> slowPtr = head;
+        while (fastPtr.hasNext() && fastPtr.getNext().hasNext()) {
+            fastPtr = fastPtr.getNext().getNext();
+            slowPtr = slowPtr.getNext();
+            if (fastPtr == slowPtr) {
+                break;
+            }
+        }
+
+        LinkedListObject<T> temp = head;
+        while (temp != slowPtr) {
+            temp = temp.getNext();
+            slowPtr = slowPtr.getNext();
+        }
+        return temp.getData();
+    }
+
+    public void circularLinkedListToSinglylinkedList() {
+
+        LinkedListObject<T> fastPtr = head;
+        LinkedListObject<T> slowPtr = head;
+        while (fastPtr.hasNext() && fastPtr.getNext().hasNext()) {
+            fastPtr = fastPtr.getNext().getNext();
+            slowPtr = slowPtr.getNext();
+            if (fastPtr == slowPtr) {
+                break;
+            }
+        }
+
+        LinkedListObject<T> temp = head;
+        while (temp.getNext() != slowPtr.getData()) {
+            temp = temp.getNext();
+            slowPtr = slowPtr.getNext();
+        }
+        slowPtr.setNext(null);
+    }
+
+    public static <T> LinkedListObject<T> mergeSortedLinkedList(T data, LinkedListObject<T> a, LinkedListObject<T> b, Comparator<T> comparator) {
+
+        LinkedListObject<T> dummy = new LinkedListObject<>(data);
+        LinkedListObject<T> tail = dummy;
+        while (a != null && b != null) {
+            if (comparator.compare(a.getData(), b.getData()) < 0) {
+                tail.setNext(a);
+                a = a.getNext();
+            } else {
+                tail.setNext(b);
+                b = b.getNext();
+            }
+            tail = tail.getNext();
+        }
+        if (a == null) {
+            tail.setNext(b);
+        } else {
+            tail.setNext(a);
+        }
+        return dummy.getNext();
+    }
+
+    // a utility for merging two singly linked list
+    public LinkedListObject<T> getHead() {
+        return head;
     }
 
     public int size() {
