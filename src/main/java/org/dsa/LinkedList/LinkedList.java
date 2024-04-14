@@ -39,6 +39,7 @@ public class LinkedList<T> {
                 LinkedListObject<T> newNode = new LinkedListObject<T>(data);
                 newNode.setNext(head);
                 head = newNode;
+                size++;
                 return;
             }
             int count = 0;
@@ -50,6 +51,7 @@ public class LinkedList<T> {
             LinkedListObject<T> newNode = new LinkedListObject<T>(data);
             newNode.setNext(iterator.getNext());
             iterator.setNext(newNode);
+            size++;
         } else {
             throw new SizeLimitExceededException();
         }
@@ -66,6 +68,7 @@ public class LinkedList<T> {
             } else {
                 head = null;
             }
+            size--;
             return;
         }
         LinkedListObject<T> iterator = head;
@@ -76,6 +79,7 @@ public class LinkedList<T> {
         }
         LinkedListObject<T> deleteNode = iterator.getNext();
         iterator.setNext(deleteNode.getNext());
+        size++;
     }
 
     public T contains(T data, Comparator<T> comparator) {
