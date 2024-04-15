@@ -1,4 +1,4 @@
-package org.dsa.Stack;
+package org.dsa.StackUsingList;
 
 import java.util.NoSuchElementException;
 
