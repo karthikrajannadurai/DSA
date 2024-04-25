@@ -33,7 +33,7 @@ public class L_150_EvaluationOfPostFixExpression {
                 break;
             }
             case "-": {
-                num = operant2 - operant1;
+                num = operant2 - operant1; // important
                 break;
             }
             case "*": {
@@ -41,7 +41,7 @@ public class L_150_EvaluationOfPostFixExpression {
                 break;
             }
             case "/": {
-                num = operant2 / operant1;
+                num = operant2 / operant1; // important
                 break;
             }
         }

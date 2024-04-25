@@ -10,7 +10,7 @@ public class BinaryTreeArray {
     }
 
     public void setLeft(int parent, int data) {
-        int location = (parent * 2) - 1;
+        int location = (parent * 2) + 1;
         if (location < binaryTree.length) {
             binaryTree[location] = data;
         } else {
@@ -20,7 +20,7 @@ public class BinaryTreeArray {
 
     public void setRight(int parent, int data) {
 
-        int location = (parent * 2) + 1;
+        int location = (parent * 2) + 2;
         if (location < binaryTree.length) {
             binaryTree[location] = data;
         } else {

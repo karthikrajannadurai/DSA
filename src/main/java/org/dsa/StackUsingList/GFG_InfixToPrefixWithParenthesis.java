@@ -5,7 +5,7 @@ import java.util.Stack;
 public class GFG_InfixToPrefixWithParenthesis {
 
 
-    public static StringBuilder infixToPostFix(String infix) {
+    public static StringBuilder infixToPreFix(String infix) {
 
         Stack<Character> stack = new Stack<>();
         StringBuilder builder = new StringBuilder();
@@ -63,6 +63,6 @@ public class GFG_InfixToPrefixWithParenthesis {
     public static void main(String[] args) {
 //        System.out.println(infixToPostFix("K+L*O"));
 //        System.out.println(infixToPostFix("a+b*{c^d-e}^{f+g*h}-i"));
-        System.out.println(infixToPostFix("K+L-M*N+(O^P)*W/U/V*T+Q").reverse());
+        System.out.println(infixToPreFix("K+L-M*N+(O^P)*W/U/V*T+Q").reverse());
     }
 }
