@@ -21,7 +21,8 @@ public class FindMinimumMaximum {
     public static void maximum() {
 
         int[] arr = new int[]{10, 12, 34, 32, 54, 67};
-        int max = arr[0], secondMax = arr[0];
+//        int[] arr = new int[]{5,4,3,2,1};
+        int max = Integer.MIN_VALUE, secondMax = Integer.MIN_VALUE;
         for (int n : arr) {
             if (max < n) {
                 secondMax = max;
