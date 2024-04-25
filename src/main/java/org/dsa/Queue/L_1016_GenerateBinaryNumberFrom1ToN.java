@@ -31,7 +31,7 @@ public class L_1016_GenerateBinaryNumberFrom1ToN {
      *  '10011' - 19
      *  '10100' - 20
      *
-     *  So, in the above example, if see 20 and 10, if we are able to find substring of 20 in s, then 10 is automatically present in s.
+     *  So, in the above example, if you see 20 and 10, if we are able to find substring of 20 in s, then 10 is automatically present in s.
      *  but we need to generate binary numbers from n or need to use Integer.toBinaryString();
      */
     public boolean queryString(String s, int n) {

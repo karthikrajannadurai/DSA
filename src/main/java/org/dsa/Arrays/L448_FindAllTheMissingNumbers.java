@@ -1,6 +1,8 @@
 package org.dsa.Arrays;
 
 public class L448_FindAllTheMissingNumbers {
+
+    // in place of the missing numbers, they will give duplicate numbers
     public static void main(String[] args) {
         findMissingNumbers(new int[]{4, 3, 2, 7, 8, 2, 3, 1});
     }
