@@ -1,7 +1,5 @@
 package org.dsa.Tree.ConstructionOfBT;
 
-import java.util.Arrays;
-
 public class L_105_BuildTreeFromPreOrder_InOrder {
 
     int preIdx = 0;
