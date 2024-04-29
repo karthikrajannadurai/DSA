@@ -259,6 +259,7 @@ public class LinkedList<T> {
         slowPtr.setNext(null);
     }
 
+    // Leetcode 21
     public static <T> LinkedListObject<T> mergeSortedLinkedList(T data, LinkedListObject<T> a, LinkedListObject<T> b, Comparator<T> comparator) {
 
         LinkedListObject<T> dummy = new LinkedListObject<>(data);
