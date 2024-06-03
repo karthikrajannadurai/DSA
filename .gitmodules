@@ -1,0 +1,3 @@
+[submodule "src/main/java/JavaStream"]
+	path = src/main/java/JavaStream
+	url = https://github.com/karthikrajannadurai/JavaStreamInterview
