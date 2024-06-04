@@ -22,5 +22,6 @@ public class Streams {
 
         // 2. intermedia operation and terminate operation refer main methods in docs in note.
         Stream<Objects> st = Stream.empty();
+        // refer docs in note.
     }
 }
